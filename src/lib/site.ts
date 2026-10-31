@@ -1,7 +1,7 @@
 // Edit contact details and services here — the whole site reads from this file.
 export const site = {
   name: "TheNextGig.pk",
-  whatsapp: "923000000000", // international format, no + or spaces (PLACEHOLDER)
+  whatsapp: "923181819660", // international format, no + or spaces
   email: "hello@thenextgig.pk", // PLACEHOLDER
   instagram: "https://instagram.com/thenextgig.pk", // PLACEHOLDER
 };

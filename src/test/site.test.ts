@@ -7,4 +7,8 @@ describe("WhatsApp links", () => {
     expect(decodeURIComponent(url)).toContain("Fiverr Gig Optimization");
     expect(url.startsWith("https://wa.me/")).toBe(true);
   });
+
+  it("sends enquiries to the owner's WhatsApp number", () => {
+    expect(waLink("Hi")).toBe("https://wa.me/923181819660?text=Hi");
+  });
 });
