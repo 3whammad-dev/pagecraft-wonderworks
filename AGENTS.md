@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Netlify hosting is configured by netlify.toml (publish dist/, NITRO_PRESET=netlify); keep vite.config.ts preset-free so Lovable publishing still targets Cloudflare.
