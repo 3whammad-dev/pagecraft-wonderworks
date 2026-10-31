@@ -166,11 +166,11 @@ function ContactForm() {
     const service = String(f.get("service") || "");
     const msg = String(f.get("message") || "").trim();
     const err: Record<string, string> = {};
-    if (name.length < 2) err.name = "Please enter your name.";
-    if (!/^\S+@\S+\.\S+$/.test(contact) && !/^\+?[\d\s-]{10,15}$/.test(contact)) err.contact = "Enter a valid email or WhatsApp number.";
-    if (!service) err.service = "Please choose a service.";
-    if (msg.length < 10) err.message = "Please describe your requirement (10+ characters).";
-    if (msg.length > 1000) err.message = "Please keep it under 1000 characters.";
+    if (name.length < 2) err["name"] = "Please enter your name.";
+    if (!/^\S+@\S+\.\S+$/.test(contact) && !/^\+?[\d\s-]{10,15}$/.test(contact)) err["contact"] = "Enter a valid email or WhatsApp number.";
+    if (!service) err["service"] = "Please choose a service.";
+    if (msg.length < 10) err["message"] = "Please describe your requirement (10+ characters).";
+    if (msg.length > 1000) err["message"] = "Please keep it under 1000 characters.";
     setErrors(err);
     if (Object.keys(err).length) return;
     const text = `Hi TheNextGig, I'm interested in "${service}".\nName: ${name}\nContact: ${contact}\nRequirement: ${msg}`;
