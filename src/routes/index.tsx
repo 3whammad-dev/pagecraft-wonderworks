@@ -128,7 +128,7 @@ function Process() {
   );
 }
 
-const faqs = [
+const faqs: [string, string][] = [
   ["How long does it take?", "Most profile, gig and CV projects take a few working days. Automation projects depend on scope—we confirm a timeline in your quote."],
   ["What do I need to provide?", "Your current profile/CV links, target roles or niche, work samples and any login-free details we need. For automation: your current process and tools."],
   ["Are revisions included?", "Yes, a reasonable round of revisions is included. The exact number is stated in your quote."],
