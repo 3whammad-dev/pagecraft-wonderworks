@@ -199,15 +199,15 @@ function ContactForm() {
         ) : (
           <form onSubmit={onSubmit} noValidate className="space-y-4">
             <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
-            <Field label="Name" error={errors.name}><Input id="name" name="name" maxLength={80} /></Field>
-            <Field label="Email or WhatsApp" error={errors.contact}><Input id="contact" name="contact" maxLength={120} /></Field>
-            <Field label="Service" error={errors.service}>
+            <Field label="Name" error={errors["name"]}><Input id="name" name="name" maxLength={80} /></Field>
+            <Field label="Email or WhatsApp" error={errors["contact"]}><Input id="contact" name="contact" maxLength={120} /></Field>
+            <Field label="Service" error={errors["service"]}>
               <select id="service" name="service" defaultValue="" className="h-9 w-full rounded-md border border-input bg-transparent px-3 text-sm">
                 <option value="" disabled className="bg-card">Select a service</option>
                 {services.map((s) => <option key={s.id} className="bg-card">{s.title}</option>)}
               </select>
             </Field>
-            <Field label="Brief requirement" error={errors.message}><Textarea id="message" name="message" rows={4} maxLength={1000} /></Field>
+            <Field label="Brief requirement" error={errors["message"]}><Textarea id="message" name="message" rows={4} maxLength={1000} /></Field>
             <Button type="submit" size="lg" className="w-full bg-gradient-primary">Send Enquiry</Button>
           </form>
         )}
@@ -216,7 +216,7 @@ function ContactForm() {
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({ label, error, children }: { label: string; error?: string | undefined; children: React.ReactNode }) {
   const id = label === "Name" ? "name" : label === "Service" ? "service" : label === "Brief requirement" ? "message" : "contact";
   return (
     <div className="space-y-1.5">
