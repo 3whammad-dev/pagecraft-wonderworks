@@ -1,0 +1,10 @@
+# Netlify build settings. These override anything set in the Netlify dashboard.
+# On Netlify the build auto-targets Netlify: static files (including the CSS)
+# go to dist/ and the page renderer goes to .netlify/functions-internal.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NITRO_PRESET = "netlify"
